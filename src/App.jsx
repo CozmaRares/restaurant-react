@@ -1,9 +1,12 @@
+import MainPage from "./pages/MainPage";
+
 import logo from "./assets/logo.svg";
 
 const App = () => {
   return (
-    <div className="tw--roboto bg-black text-white">
+    <div className="text-roboto bg-black text-white">
       <Header />
+      <Main />
       <Footer />
     </div>
   );
@@ -19,7 +22,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-black min-h-fit h-[10vh] py-6 mb-[5px] tw--combo z-[1] sticky top-0">
+    <header className="bg-black min-h-fit h-[10vh] py-6 mb-[5px] text-combo z-[1] sticky top-0">
       <div className="tw--section-center h-full flex items-center justify-between flex-row">
         <img src={logo} alt="logo" className="cursor-pointer" />
         <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl">
@@ -35,6 +38,14 @@ const Header = () => {
         />
       </div>
     </header>
+  );
+};
+
+const Main = () => {
+  return (
+    <main>
+      <MainPage />
+    </main>
   );
 };
 
@@ -110,7 +121,10 @@ const Footer = () => {
         <h4 className="tw--footer-heading">Navigation</h4>
         <ul className="capitalize text-slate-300 text-lg">
           {pageLinks.map(({ text }) => (
-            <li className="cursor-pointer w-fit mb-2 border-b-2 border-[#00000000] transition duration-300  tw--yellow-hover-text-border">
+            <li
+              key={text}
+              className="cursor-pointer w-fit mb-2 border-b-2 border-[#00000000] transition-[border-color,color] duration-300  tw--yellow-hover-text-border"
+            >
               {text}
             </li>
           ))}
@@ -120,11 +134,11 @@ const Footer = () => {
         <h4 className="tw--footer-heading">Contacts</h4>
         <ul>
           {contacts.map(({ path, text }) => (
-            <li className="flex items-center gap-2 mb-3">
+            <li key={text} className="flex items-center gap-2 mb-3">
               <svg
                 style={{ width: "24px", height: "24px" }}
                 viewBox="0 0 24 24"
-                className="tw--yellow-text"
+                className="text-yellow-custom"
               >
                 {path}
               </svg>
@@ -158,12 +172,12 @@ const Footer = () => {
 const Socials = ({ whereCalled, socialLinks, justifyContent }) => {
   return (
     <ul
-      className={`flex items-center ${justifyContent} flex-row tw--yellow-text gap-2`}
+      className={`flex items-center ${justifyContent} flex-row text-yellow-custom gap-2`}
     >
       {socialLinks.map(({ href, icon }) => (
         <li
           key={whereCalled + icon}
-          className="cursor-pointer w-[1.7em] h-[1.7em] flex items-center justify-center border tw--yellow-border p-1 transition rounded-md  hover:text-black hover:tw--yellow-bg"
+          className="cursor-pointer w-[1.7em] h-[1.7em] flex items-center justify-center border border-yellow-custom p-1 transition-[color,background-color] rounded-md  hover:text-black hover:bg-yellow-custom"
         >
           <a href={href} target="_blank" rel="noopener noreferrer">
             <i className={`fa-brands fa-${icon}`}></i>

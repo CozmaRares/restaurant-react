@@ -12,49 +12,55 @@ img {
   height: 100%;
 }
 
+@layer utilities {
+  .text-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .text-combo {
+    font-family: "Combo", cursive;
+  }
+
+  .text-teko {
+    font-family: "Teko", sans-serif;
+  }
+
+  .text-yellow-custom {
+    color: var(--yellow);
+  }
+
+  .bg-yellow-custom {
+    background-color: var(--yellow);
+  }
+
+  .border-yellow-custom {
+    border-color: var(--yellow);
+  }
+
+  .text-shadow {
+    text-shadow: 0 0 5px black;
+  }
+}
+
 @layer components {
   .tw--section-center {
     @apply w-[65vw] mx-auto;
   }
 
-  .tw--roboto {
-    font-family: "Roboto", sans-serif;
-  }
-
-  .tw--combo {
-    font-family: "Combo", cursive;
-  }
-
-  .tw--teko {
-    font-family: "Teko", sans-serif;
-  }
-
-  .tw--yellow-text {
-    color: var(--yellow);
-  }
-
-  .tw--yellow-bg {
-    background-color: var(--yellow);
-  }
-
-  .tw--yellow-border {
-    border-color: var(--yellow);
-  }
-
   .tw--footer-heading {
-    @apply tw--teko text-3xl mb-6;
+    @apply text-teko text-3xl mb-6 font-semibold;
   }
 
   .tw--yellow-hover-text-border:hover {
-    @apply tw--yellow-text tw--yellow-border;
+    @apply text-yellow-custom border-yellow-custom;
   }
 
   .tw--button {
-    @apply block tw--yellow-text border-2 tw--yellow-border rounded-md p-4 cursor-pointer transition duration-300;
+    @apply block text-yellow-custom border-2 border-yellow-custom rounded-md p-4 cursor-pointer transition-[color,background-color] duration-300;
   }
 
   .tw--button:hover {
-    @apply text-black tw--yellow-bg;
+    @apply text-black bg-yellow-custom;
   }
 }
 
