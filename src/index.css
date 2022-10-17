@@ -1,3 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Combo&family=Roboto&family=Teko&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --yellow: #ffc124;
+}
+
+img {
+  height: 100%;
+}
+
+@layer components {
+  .tw--section-center {
+    @apply w-[65vw] mx-auto;
+  }
+
+  .tw--roboto {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .tw--combo {
+    font-family: "Combo", cursive;
+  }
+
+  .tw--teko {
+    font-family: "Teko", sans-serif;
+  }
+
+  .tw--yellow-text {
+    color: var(--yellow);
+  }
+
+  .tw--yellow-bg {
+    background-color: var(--yellow);
+  }
+
+  .tw--yellow-border {
+    border-color: var(--yellow);
+  }
+
+  .tw--footer-heading {
+    @apply tw--teko text-3xl;
+  }
+}
+
+.hover-underline::after {
+  display: block;
+  content: "";
+  background-color: white;
+  height: 2px;
+  width: 0;
+  transition: width 300ms ease-in-out;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
