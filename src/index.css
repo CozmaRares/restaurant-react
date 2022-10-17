@@ -42,7 +42,19 @@ img {
   }
 
   .tw--footer-heading {
-    @apply tw--teko text-3xl;
+    @apply tw--teko text-3xl mb-6;
+  }
+
+  .tw--yellow-hover-text-border:hover {
+    @apply tw--yellow-text tw--yellow-border;
+  }
+
+  .tw--button {
+    @apply block tw--yellow-text border-2 tw--yellow-border rounded-md p-4 cursor-pointer transition duration-300;
+  }
+
+  .tw--button:hover {
+    @apply text-black tw--yellow-bg;
   }
 }
 
