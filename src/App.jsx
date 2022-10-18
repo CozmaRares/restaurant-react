@@ -123,7 +123,7 @@ const Footer = () => {
           {pageLinks.map(({ text }) => (
             <li
               key={text}
-              className="cursor-pointer w-fit mb-2 border-b-2 border-[#00000000] transition-[border-color,color] duration-300  tw--yellow-hover-text-border"
+              className="cursor-pointer w-fit mb-2 border-b-2 border-[#00000000] transition-[border-color,color] tw--yellow-hover-text-border"
             >
               {text}
             </li>

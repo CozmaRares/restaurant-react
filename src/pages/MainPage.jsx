@@ -14,6 +14,8 @@ import snacks from "../assets/svg/icons/snack.svg";
 
 import bar from "../assets/images/bar.jpg";
 
+import pfp from "../assets/images/pfp.jpg";
+
 import corona from "../assets/svg/brands/corona.svg";
 import miller from "../assets/svg/brands/miller.svg";
 import hoegaarden from "../assets/svg/brands/hoegaarden.svg";
@@ -27,10 +29,14 @@ const MainPage = () => {
       <Hero />
       <Menu />
       <About src={bar} direction="flex-row" />
-      <div className="opacity-0 pb-24"></div>
+      <Testimonials />
+      <div className="pb-24"></div>
+      <Brands />
     </>
   );
 };
+
+export default MainPage;
 
 const Hero = () => {
   return (
@@ -141,4 +147,54 @@ const Menu = () => {
   );
 };
 
-export default MainPage;
+const Testimonials = () => {
+  const dates = ["June 29, 2022", "October 18, 2022"];
+
+  return (
+    <section className="tw--section-center text-center my-20">
+      <Heading h4="testimonials" h2="what our clients say about us" />
+      <div className="p-5"></div>
+      <div className="flex items-center justify-between gap-8">
+        {dates.map(date => (
+          <div className="bg-neutral-900 p-8 rounded-xl [&>*]:mx-auto">
+            <img
+              src={pfp}
+              alt="profile picture"
+              className="w-[150px] h-[150px] rounded-full"
+            />
+            <h3 className="my-2 text-3xl text-teko">John Doe</h3>
+            <p className="w-4/5 text-slate-300 text-base my-2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              blanditiis nisi ex harum totam, aliquam quaerat temporibus
+              molestias? Eveniet, iste alias ea nulla, vitae magnam impedit
+              ratione quam vero earum ad veritatis incidunt optio ex obcaecati
+              assumenda officiis dicta! Quam amet ipsum at reiciendis, ullam
+              voluptate eos nam porro voluptas?
+            </p>
+            <p className="text-yellow-custom font-semibold text-lg text-combo italic">
+              {date}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Brands = () => {
+  const brands = [corona, miller, hoegaarden, carlsberg, budweiser, heineken];
+
+  return (
+    <section className="bg-yellow-custom h-[15vh] flex items-center justify-center py-4 gap-2">
+      {brands.map(brand => (
+        <div className="w-[250px] h-full bg-zinc-900 relative rounded-md bg-opacity-10">
+          <img
+            src={brand}
+            alt="beer brand"
+            className="w-3/4 h-3/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-fill"
+          />
+        </div>
+      ))}
+    </section>
+  );
+};

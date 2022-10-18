@@ -57,7 +57,7 @@ img {
   }
 
   .tw--button {
-    @apply block text-yellow-custom border-2 border-yellow-custom rounded-md p-4 cursor-pointer transition-[color,background-color] duration-300;
+    @apply block text-yellow-custom border-2 border-yellow-custom rounded-md p-4 cursor-pointer transition-[color,background-color];
   }
 
   .tw--button:hover {

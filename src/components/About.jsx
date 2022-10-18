@@ -21,7 +21,9 @@ const About = ({ src, alt, direction }) => {
           <button className="tw--button">Learn more</button>
         </div>
       </div>
-      <img src={src} alt={alt} />
+      <div>
+        <img src={src} alt={alt} className="w-full h-full" />
+      </div>
     </div>
   );
 };
