@@ -3,7 +3,7 @@ import Heading from "./Heading";
 const About = ({ src, alt, direction }) => {
   return (
     <div className={`flex ${direction} [&>*]:w-1/2`}>
-      <div className="p-20 bg-neutral-900">
+      <div className="p-20 bg-card">
         <div className="w-[60%] mx-auto [&>p]:py-8 [&>p]:text-slate-300">
           <Heading h4="our story" h2="about beer boutique" />
           <p className="font-medium text-2xl">

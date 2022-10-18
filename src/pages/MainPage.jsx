@@ -40,7 +40,7 @@ export default MainPage;
 
 const Hero = () => {
   return (
-    <section className="w-full h-[90vh] grid text-white isolate z-0 overflow-hidden relative">
+    <section className="w-full fill-below-header grid isolate z-0 overflow-hidden relative">
       <video
         className="col-span-full row-span-full object-cover w-full h-full -z-[1]"
         autoPlay
@@ -49,7 +49,7 @@ const Hero = () => {
       >
         <source src={draftBeer} type="video/mp4" />
       </video>
-      <div className="col-span-full row-span-full bg-black opacity-60 z-0"></div>
+      <div className="col-span-full row-span-full bg-primary opacity-60 z-0"></div>
       <div className="col-span-full row-span-full text-4xl absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 z-[1] text-center">
         <h1 className="text-teko text-7xl text-yellow-custom uppercase font-bold">
           beer boutique
@@ -103,7 +103,7 @@ const Menu = () => {
             <img
               src={img}
               alt={img.replaceAll("-", " ")}
-              className="w-full aspect-[1/1.3] rounded-2xl brightness-75 transition-[filter] z-0 group-hover:brightness-[35%]"
+              className="w-full aspect-[1/1.3] object-cover rounded-2xl brightness-75 transition-[filter] z-0 group-hover:brightness-[35%]"
             />
             <h3 className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] text-teko text-5xl transition-[color] group-hover:text-neutral-300">
               {h3}
@@ -114,14 +114,6 @@ const Menu = () => {
       <div className="grid grid-cols-[1fr,4fr] gap-20">
         <div>
           <Heading h4="what we offer" h2="cold beer and tasty snacks" />
-          {/* <h4 className="text-xl text-combo text-yellow-custom">
-            What we offer
-          </h4> */}
-          {/* <h2 className="mt-2 text-teko text-5xl font-medium">
-            COLD <span className="text-yellow-custom">BEER</span> AND
-            <br />
-            TASTY <span className="text-yellow-custom">SNACKS</span>
-          </h2> */}
           <button className="w-[60%] min-w-fit tw--button mt-3">
             Learn More
           </button>
@@ -156,7 +148,7 @@ const Testimonials = () => {
       <div className="p-5"></div>
       <div className="flex items-center justify-between gap-8">
         {dates.map(date => (
-          <div className="bg-neutral-900 p-8 rounded-xl [&>*]:mx-auto">
+          <div className="bg-card p-8 rounded-xl [&>*]:mx-auto">
             <img
               src={pfp}
               alt="profile picture"
@@ -187,7 +179,7 @@ const Brands = () => {
   return (
     <section className="bg-yellow-custom h-[15vh] flex items-center justify-center py-4 gap-2">
       {brands.map(brand => (
-        <div className="w-[250px] h-full bg-zinc-900 relative rounded-md bg-opacity-10">
+        <div className="w-[250px] h-full bg-neutral-900 relative rounded-md bg-opacity-20">
           <img
             src={brand}
             alt="beer brand"

@@ -4,7 +4,7 @@ import logo from "./assets/logo.svg";
 
 const App = () => {
   return (
-    <div className="text-roboto bg-black text-white">
+    <div className="text-roboto bg-primary text-primary">
       <Header />
       <Main />
       <Footer />
@@ -22,7 +22,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-black min-h-fit h-[10vh] py-6 mb-[5px] text-combo z-[1] sticky top-0">
+    <header className="header bg-primary min-h-fit py-6 mb-[5px] text-combo z-[1] sticky top-0">
       <div className="tw--section-center h-full flex items-center justify-between flex-row">
         <img src={logo} alt="logo" className="cursor-pointer" />
         <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl">
@@ -153,7 +153,7 @@ const Footer = () => {
         </h4>
         <form className="text-lg">
           <input
-            className="block w-full bg-neutral-700 p-2 pl-4 rounded-md mb-4"
+            className="block w-full bg-secondary p-2 pl-4 rounded-md mb-4"
             type="email"
             name="footer-email"
             id="footer-email"

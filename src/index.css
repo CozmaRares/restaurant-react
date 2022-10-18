@@ -6,14 +6,42 @@
 
 :root {
   --yellow: #ffc124;
+  --header-height: 10vh;
 }
 
 img {
   height: 100%;
-  object-fit: cover;
 }
 
 @layer utilities {
+  .header {
+    height: var(--header-height);
+  }
+
+  .fill-below-header {
+    height: calc(100vh - var(--header-height));
+  }
+
+  .text-primary {
+    color: white;
+  }
+
+  .text-secondary {
+    @apply text-slate-300;
+  }
+
+  .bg-primary {
+    background-color: black;
+  }
+
+  .bg-secondary {
+    @apply bg-neutral-700;
+  }
+
+  .bg-card {
+    @apply bg-neutral-900;
+  }
+
   .text-roboto {
     font-family: "Roboto", sans-serif;
   }
