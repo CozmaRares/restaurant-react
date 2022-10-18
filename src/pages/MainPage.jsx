@@ -1,3 +1,6 @@
+import About from "../components/About";
+import Heading from "../components/Heading";
+
 import draftBeer from "../assets/draft-beer.mp4";
 
 import beerGlass from "../assets/images/beer-glass.jpg";
@@ -21,8 +24,10 @@ import heineken from "../assets/svg/brands/heineken.svg";
 const MainPage = () => {
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       <Menu />
+      <About src={bar} direction="flex-row" />
+      <div className="opacity-0 pb-24"></div>
     </>
   );
 };
@@ -61,9 +66,16 @@ const Menu = () => {
     { img: hamburger, h3: "FOOD MENU" }
   ];
 
+  const offerItems = [
+    { img: bottledBeer, h3: "BOTTLED BEER" },
+    { img: snacks, h3: "SNACKS" },
+    { img: beerOnTap, h3: "BEER ON TAP" },
+    { img: cocktail, h3: "COCKTAILS" }
+  ];
+
   return (
-    <section className="tw--section-center [&>*]:w-full mb-24">
-      <div className="text-center my-20">
+    <section className="tw--section-center mt-12 mb-24 [&>*]:w-full [&>*]:mb-24">
+      <div className="text-center">
         <h2 className="text-combo text-5xl text-yellow-custom">MENU</h2>
         <h4 className="text-lg">Explore our food and drink offers</h4>
       </div>
@@ -85,7 +97,7 @@ const Menu = () => {
             <img
               src={img}
               alt={img.replaceAll("-", " ")}
-              className="w-full aspect-[1/1.3] object-cover rounded-2xl brightness-75 transition-[filter] z-0 group-hover:brightness-[35%]"
+              className="w-full aspect-[1/1.3] rounded-2xl brightness-75 transition-[filter] z-0 group-hover:brightness-[35%]"
             />
             <h3 className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] text-teko text-5xl transition-[color] group-hover:text-neutral-300">
               {h3}
@@ -93,6 +105,38 @@ const Menu = () => {
           </li>
         ))}
       </ul>
+      <div className="grid grid-cols-[1fr,4fr] gap-20">
+        <div>
+          <Heading h4="what we offer" h2="cold beer and tasty snacks" />
+          {/* <h4 className="text-xl text-combo text-yellow-custom">
+            What we offer
+          </h4> */}
+          {/* <h2 className="mt-2 text-teko text-5xl font-medium">
+            COLD <span className="text-yellow-custom">BEER</span> AND
+            <br />
+            TASTY <span className="text-yellow-custom">SNACKS</span>
+          </h2> */}
+          <button className="w-[60%] min-w-fit tw--button mt-3">
+            Learn More
+          </button>
+        </div>
+        <div className="grid grid-cols-2 grid-rows-2 gap-4">
+          {offerItems.map(({ img, h3 }) => (
+            <div className="flex">
+              <img src={img} alt="icon" className="w-[100px] aspect-square" />
+              <div>
+                <h3 className="text-teko font-medium text-2xl text-yellow-custom">
+                  {h3}
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Temporibus, eligendi!
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
