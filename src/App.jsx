@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 
@@ -64,6 +65,8 @@ const Main = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </ScrollToTop>
     </main>

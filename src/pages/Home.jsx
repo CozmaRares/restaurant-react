@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
-import { Link } from "react-router-dom";
+import Spacer from "../components/Spacer";
 
 import draftBeer from "../assets/draft-beer.mp4";
 
@@ -31,7 +32,7 @@ const Home = () => {
       <Menu />
       <AboutSection src={bar} direction="flex-row" />
       <Testimonials />
-      <div className="pb-24"></div>
+      <Spacer />
       <Brands />
     </>
   );
@@ -149,7 +150,7 @@ const Testimonials = () => {
   return (
     <section className="tw--section-center text-center my-20">
       <Heading subtitle="testimonials" title="what our clients say about us" />
-      <div className="p-5"></div>
+      <Spacer />
       <div className="flex items-center justify-between gap-8">
         {dates.map(date => (
           <div
