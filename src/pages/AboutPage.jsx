@@ -1,6 +1,6 @@
 import About from "../components/About";
-import PageHeader from "../components/PageHeader";
 import Heading from "../components/Heading";
+import PageHeader from "../components/PageHeader";
 
 import img from "../assets/images/group.jpg";
 import pfp from "../assets/images/pfp.jpg";

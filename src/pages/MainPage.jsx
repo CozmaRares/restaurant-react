@@ -16,12 +16,12 @@ import bar from "../assets/images/bar.jpg";
 
 import pfp from "../assets/images/pfp.jpg";
 
-import corona from "../assets/svg/brands/corona.svg";
-import miller from "../assets/svg/brands/miller.svg";
-import hoegaarden from "../assets/svg/brands/hoegaarden.svg";
-import carlsberg from "../assets/svg/brands/carlsberg.svg";
 import budweiser from "../assets/svg/brands/budweiser.svg";
+import carlsberg from "../assets/svg/brands/carlsberg.svg";
+import corona from "../assets/svg/brands/corona.svg";
 import heineken from "../assets/svg/brands/heineken.svg";
+import hoegaarden from "../assets/svg/brands/hoegaarden.svg";
+import miller from "../assets/svg/brands/miller.svg";
 
 const MainPage = () => {
   return (
@@ -123,7 +123,7 @@ const Menu = () => {
         </div>
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
           {offerItems.map(({ img, h3 }) => (
-            <div className="flex">
+            <div key={img} className="flex">
               <img src={img} alt="icon" className="w-[100px] aspect-square" />
               <div>
                 <h3 className="font-teko font-medium text-2xl text-yellow-custom">
@@ -185,7 +185,10 @@ const Brands = () => {
   return (
     <section className="bg-yellow-custom h-[15vh] flex items-center justify-center py-4 gap-2">
       {brands.map(brand => (
-        <div className="w-[250px] h-full bg-neutral-900 relative rounded-md bg-opacity-20">
+        <div
+          key={brand}
+          className="w-[250px] h-full bg-neutral-900 relative rounded-md bg-opacity-20"
+        >
           <img
             src={brand}
             alt="beer brand"

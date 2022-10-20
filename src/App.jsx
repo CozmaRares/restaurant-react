@@ -1,7 +1,8 @@
+import AboutPage from "./pages/AboutPage";
 import MainPage from "./pages/MainPage";
+import { Routes, Route, Link } from "react-router-dom";
 
 import logo from "./assets/logo.svg";
-import AboutPage from "./pages/AboutPage";
 
 const App = () => {
   return (
@@ -16,6 +17,13 @@ const App = () => {
 export default App;
 
 const Header = () => {
+  const links = [
+    { to: "about", text: "about us" },
+    { to: "menu", text: "menu" },
+    { to: "blog", text: "blog" },
+    { to: "booking", text: "book a table" }
+  ];
+
   const socialLinks = [
     { href: "#", icon: "github" },
     { href: "#", icon: "facebook-f" },
@@ -25,12 +33,17 @@ const Header = () => {
   return (
     <header className="header bg-primary min-h-fit py-6 mb-[5px] font-combo z-[1] sticky top-0">
       <div className="tw--section-center h-full flex items-center justify-between flex-row">
-        <img src={logo} alt="logo" className="cursor-pointer" />
+        <Link to="/" className="h-full">
+          <img src={logo} alt="logo" className="cursor-pointer" />
+        </Link>
         <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl">
-          <li className="cursor-pointer hover-underline">about us</li>
-          <li className="cursor-pointer hover-underline">menu</li>
-          <li className="cursor-pointer hover-underline">blog</li>
-          <li className="cursor-pointer hover-underline">book a table</li>
+          {links.map(({ to, text }) => {
+            return (
+              <li key={to} className="cursor-pointer hover-underline">
+                <Link to={"/" + to}>{text}</Link>
+              </li>
+            );
+          })}
         </ul>
         <Socials
           whereCalled="header"
@@ -45,8 +58,10 @@ const Header = () => {
 const Main = () => {
   return (
     <main>
-      {/* <MainPage /> */}
-      <AboutPage />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
     </main>
   );
 };
