@@ -42,15 +42,15 @@ img {
     @apply bg-neutral-900;
   }
 
-  .text-roboto {
+  .font-roboto {
     font-family: "Roboto", sans-serif;
   }
 
-  .text-combo {
+  .font-combo {
     font-family: "Combo", cursive;
   }
 
-  .text-teko {
+  .font-teko {
     font-family: "Teko", sans-serif;
   }
 
@@ -77,7 +77,7 @@ img {
   }
 
   .tw--footer-heading {
-    @apply text-teko text-3xl mb-6 font-semibold;
+    @apply font-teko text-3xl mb-6 font-semibold;
   }
 
   .tw--yellow-hover-text-border:hover {

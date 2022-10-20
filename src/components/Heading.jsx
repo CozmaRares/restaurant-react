@@ -1,8 +1,10 @@
-const Heading = ({ h4, h2 }) => {
+const Heading = ({ subtitle, title }) => {
   return (
     <>
-      <h4 className="capitalize text-xl text-combo text-yellow-custom">{h4}</h4>
-      <h2 className="uppercase mt-2 text-teko text-5xl font-medium">{h2}</h2>
+      <h4 className="capitalize text-xl font-combo text-yellow-custom">
+        {subtitle}
+      </h4>
+      <h2 className="uppercase mt-2 font-teko text-5xl font-medium">{title}</h2>
     </>
   );
 };

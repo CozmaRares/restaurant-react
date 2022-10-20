@@ -1,10 +1,11 @@
 import MainPage from "./pages/MainPage";
 
 import logo from "./assets/logo.svg";
+import AboutPage from "./pages/AboutPage";
 
 const App = () => {
   return (
-    <div className="text-roboto bg-primary text-primary">
+    <div className="font-roboto bg-primary text-primary">
       <Header />
       <Main />
       <Footer />
@@ -22,7 +23,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="header bg-primary min-h-fit py-6 mb-[5px] text-combo z-[1] sticky top-0">
+    <header className="header bg-primary min-h-fit py-6 mb-[5px] font-combo z-[1] sticky top-0">
       <div className="tw--section-center h-full flex items-center justify-between flex-row">
         <img src={logo} alt="logo" className="cursor-pointer" />
         <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl">
@@ -44,7 +45,8 @@ const Header = () => {
 const Main = () => {
   return (
     <main>
-      <MainPage />
+      {/* <MainPage /> */}
+      <AboutPage />
     </main>
   );
 };

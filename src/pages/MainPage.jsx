@@ -51,7 +51,7 @@ const Hero = () => {
       </video>
       <div className="col-span-full row-span-full bg-primary opacity-60 z-0"></div>
       <div className="col-span-full row-span-full text-4xl absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 z-[1] text-center">
-        <h1 className="text-teko text-7xl text-yellow-custom uppercase font-bold">
+        <h1 className="font-teko text-7xl text-yellow-custom uppercase font-bold">
           beer boutique
         </h1>
         <h5 className="mt-2 mb-3 font-medium text-4xl">
@@ -59,7 +59,7 @@ const Hero = () => {
           <br /> with the{" "}
           <span className="text-yellow-custom italic">best foods</span>
         </h5>
-        <p className="text-combo italic font-base">Enjoy your beer!</p>
+        <p className="font-combo italic font-base">Enjoy your beer!</p>
       </div>
     </section>
   );
@@ -82,7 +82,7 @@ const Menu = () => {
   return (
     <section className="tw--section-center mt-12 mb-24 [&>*]:w-full [&>*]:mb-24">
       <div className="text-center">
-        <h2 className="text-combo text-5xl text-yellow-custom">MENU</h2>
+        <h2 className="font-combo text-5xl text-yellow-custom">MENU</h2>
         <h4 className="text-lg">Explore our food and drink offers</h4>
       </div>
       <ul className="flex items-center justify-between">
@@ -105,7 +105,7 @@ const Menu = () => {
               alt={img.replaceAll("-", " ")}
               className="w-full aspect-[1/1.3] object-cover rounded-2xl brightness-75 transition-[filter] z-0 group-hover:brightness-[35%]"
             />
-            <h3 className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] text-teko text-5xl transition-[color] group-hover:text-neutral-300">
+            <h3 className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] font-teko text-5xl transition-[color] group-hover:text-neutral-300">
               {h3}
             </h3>
           </li>
@@ -113,7 +113,10 @@ const Menu = () => {
       </ul>
       <div className="grid grid-cols-[1fr,4fr] gap-20">
         <div>
-          <Heading h4="what we offer" h2="cold beer and tasty snacks" />
+          <Heading
+            subtitle="what we offer"
+            title="cold beer and tasty snacks"
+          />
           <button className="w-[60%] min-w-fit tw--button mt-3">
             Learn More
           </button>
@@ -123,7 +126,7 @@ const Menu = () => {
             <div className="flex">
               <img src={img} alt="icon" className="w-[100px] aspect-square" />
               <div>
-                <h3 className="text-teko font-medium text-2xl text-yellow-custom">
+                <h3 className="font-teko font-medium text-2xl text-yellow-custom">
                   {h3}
                 </h3>
                 <p>
@@ -144,17 +147,20 @@ const Testimonials = () => {
 
   return (
     <section className="tw--section-center text-center my-20">
-      <Heading h4="testimonials" h2="what our clients say about us" />
+      <Heading subtitle="testimonials" title="what our clients say about us" />
       <div className="p-5"></div>
       <div className="flex items-center justify-between gap-8">
         {dates.map(date => (
-          <div className="bg-card p-8 rounded-xl [&>*]:mx-auto">
+          <div
+            key={`testimonial-${date}`}
+            className="bg-card p-8 rounded-xl [&>*]:mx-auto"
+          >
             <img
               src={pfp}
               alt="profile picture"
               className="w-[150px] h-[150px] rounded-full"
             />
-            <h3 className="my-2 text-3xl text-teko">John Doe</h3>
+            <h3 className="my-2 text-3xl font-teko">John Doe</h3>
             <p className="w-4/5 text-slate-300 text-base my-2">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
               blanditiis nisi ex harum totam, aliquam quaerat temporibus
@@ -163,7 +169,7 @@ const Testimonials = () => {
               assumenda officiis dicta! Quam amet ipsum at reiciendis, ullam
               voluptate eos nam porro voluptas?
             </p>
-            <p className="text-yellow-custom font-semibold text-lg text-combo italic">
+            <p className="text-yellow-custom font-semibold text-lg font-combo italic">
               {date}
             </p>
           </div>
