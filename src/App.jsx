@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Menu from "./pages/Menu";
 
 import logo from "./assets/logo.svg";
 
@@ -37,7 +38,7 @@ const Header = () => {
         <Link to="/" className="h-full">
           <img src={logo} alt="logo" className="cursor-pointer" />
         </Link>
-        <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl">
+        <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl text-secondary">
           {links.map(({ to, text }) => {
             return (
               <li key={to} className="cursor-pointer hover-underline">

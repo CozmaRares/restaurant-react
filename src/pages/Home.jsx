@@ -1,5 +1,6 @@
 import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
+import { Link } from "react-router-dom";
 
 import draftBeer from "../assets/draft-beer.mp4";
 
@@ -118,7 +119,7 @@ const Menu = () => {
             title="cold beer and tasty snacks"
           />
           <button className="w-[60%] min-w-fit tw--button mt-3">
-            Learn More
+            <Link to="/menu">Learn More</Link>
           </button>
         </div>
         <div className="grid grid-cols-2 grid-rows-2 gap-4">

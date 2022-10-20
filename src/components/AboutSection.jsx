@@ -1,4 +1,5 @@
 import Heading from "./Heading";
+import { Link } from "react-router-dom";
 
 const AboutSection = ({ src, alt, direction, hideButton }) => {
   return (
@@ -19,7 +20,9 @@ const AboutSection = ({ src, alt, direction, hideButton }) => {
             eius maxime obcaecati excepturi voluptates?
           </p>
           {hideButton === undefined && (
-            <button className="tw--button">Learn more</button>
+            <button className="tw--button">
+              <Link to="/about">Learn More</Link>
+            </button>
           )}
         </div>
       </div>
