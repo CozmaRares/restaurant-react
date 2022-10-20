@@ -49,7 +49,7 @@ const Staff = () => {
         ))}
       </div>
       <div className="text-left bg-yellow-custom text-black py-10 px-14 my-24 relative">
-        <h1 className="text-teko font-semibold text-6xl">WE ARE HIRING!</h1>
+        <h1 className="font-teko font-semibold text-6xl">WE ARE HIRING!</h1>
         <p className="font-medium text-lg italic">
           We are always looking for communicable waiters <br />
           and professional bartenders.
