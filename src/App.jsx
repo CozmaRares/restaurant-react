@@ -1,6 +1,7 @@
-import AboutPage from "./pages/AboutPage";
-import MainPage from "./pages/MainPage";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import About from "./pages/About";
+import Home from "./pages/Home";
 
 import logo from "./assets/logo.svg";
 
@@ -58,10 +59,12 @@ const Header = () => {
 const Main = () => {
   return (
     <main>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </ScrollToTop>
     </main>
   );
 };
@@ -74,11 +77,11 @@ const Footer = () => {
   ];
 
   const pageLinks = [
-    { text: "main page" },
-    { text: "about us" },
-    { text: "menu" },
-    { text: "blog" },
-    { text: "book a table" }
+    { to: "", text: "home page" },
+    { to: "about", text: "about us" },
+    { to: "menu", text: "menu" },
+    { to: "blog", text: "blog" },
+    { to: "book", text: "book a table" }
   ];
 
   const contacts = [
@@ -137,12 +140,12 @@ const Footer = () => {
       <div>
         <h4 className="tw--footer-heading">Navigation</h4>
         <ul className="capitalize text-slate-300 text-lg">
-          {pageLinks.map(({ text }) => (
+          {pageLinks.map(({ to, text }) => (
             <li
-              key={text}
+              key={to}
               className="cursor-pointer w-fit mb-2 border-b-2 border-[#00000000] transition-[border-color,color] tw--yellow-hover-text-border"
             >
-              {text}
+              <Link to={"/" + to}>{text}</Link>
             </li>
           ))}
         </ul>

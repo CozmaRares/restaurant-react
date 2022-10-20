@@ -1,4 +1,4 @@
-import About from "../components/About";
+import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
 import PageHeader from "../components/PageHeader";
 
@@ -6,11 +6,11 @@ import img from "../assets/images/group.jpg";
 import pfp from "../assets/images/pfp.jpg";
 import beer from "../assets/svg/icons/beer-mug.svg";
 
-const AboutPage = () => {
+const About = () => {
   return (
     <>
       <PageHeader text="about beer boutique" />
-      <About
+      <AboutSection
         src={img}
         alt="group photo"
         direction="flex-row-reverse"
@@ -20,6 +20,8 @@ const AboutPage = () => {
     </>
   );
 };
+
+export default About;
 
 const Staff = () => {
   const positions = ["Beer Master", "Chef", "Manager"];
@@ -71,5 +73,3 @@ const Staff = () => {
     </section>
   );
 };
-
-export default AboutPage;

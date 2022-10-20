@@ -1,6 +1,6 @@
 import Heading from "./Heading";
 
-const About = ({ src, alt, direction, hideButton }) => {
+const AboutSection = ({ src, alt, direction, hideButton }) => {
   return (
     <section className={`flex ${direction} [&>*]:w-1/2`}>
       <div className="p-20 bg-card">
@@ -30,4 +30,4 @@ const About = ({ src, alt, direction, hideButton }) => {
   );
 };
 
-export default About;
+export default AboutSection;

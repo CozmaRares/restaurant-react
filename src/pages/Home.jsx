@@ -1,4 +1,4 @@
-import About from "../components/About";
+import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
 
 import draftBeer from "../assets/draft-beer.mp4";
@@ -23,12 +23,12 @@ import heineken from "../assets/svg/brands/heineken.svg";
 import hoegaarden from "../assets/svg/brands/hoegaarden.svg";
 import miller from "../assets/svg/brands/miller.svg";
 
-const MainPage = () => {
+const Home = () => {
   return (
     <>
       <Hero />
       <Menu />
-      <About src={bar} direction="flex-row" />
+      <AboutSection src={bar} direction="flex-row" />
       <Testimonials />
       <div className="pb-24"></div>
       <Brands />
@@ -36,7 +36,7 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Home;
 
 const Hero = () => {
   return (
