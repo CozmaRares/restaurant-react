@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Heading from "../components/Heading";
 import PageHeader from "../components/PageHeader";
 import { Spacer } from "../components/Spacer";
@@ -117,22 +118,66 @@ const List = ({ title, items }) => {
   );
 };
 
-const Caret = ({ className }) => {
+const Caret = ({ className, onclick }) => {
   return (
     <div
+      onClick={onclick}
       className={
-        "absolute top-[60%] w-[20px] h-[20px] border-t-2 border-l-2 border-white cursor-pointer " +
+        "text-yellow-custom absolute top-[60%] hover:bg-neutral-800 rounded-full cursor-pointer " +
         className
       }
-    ></div>
+    >
+      <svg style={{ width: "30px", height: "30px" }} viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"
+        />
+      </svg>
+    </div>
   );
 };
 
 const Lists = ({ title, lists }) => {
+  const ref = useRef();
+
+  const handleScroll = direction => {
+    const computedStyle = getComputedStyle(ref.current);
+
+    let scroll =
+      parseInt(computedStyle.getPropertyValue("--scroll")) + direction;
+
+    const maxScroll = ref.current.children.length - 2;
+
+    let reachedEnd = true;
+
+    if (scroll > 0) scroll -= maxScroll;
+    else if (scroll < -maxScroll) scroll += maxScroll;
+    else reachedEnd = false;
+
+    if (reachedEnd) {
+      scroll -= direction;
+      ref.current.style.setProperty("--scroll", `${scroll}}`);
+      scroll += direction;
+    }
+
+    setTimeout(() => {
+      ref.current.style.setProperty("--scroll", `${scroll}`);
+
+      ref.current.classList.add("scroll");
+      setTimeout(() => ref.current.classList.remove("scroll"), 300);
+    }, 0);
+  };
+
   return (
     <section className="tw--section-center relative">
-      <Caret className="-rotate-45 -left-[5%]" />
-      <Caret className="rotate-[135deg] -right-[5%]" />
+      <Caret
+        className="-rotate-90 -left-[5%]"
+        onclick={() => handleScroll(1)}
+      />
+      <Caret
+        className="rotate-90 -right-[5%]"
+        onclick={() => handleScroll(-1)}
+      />
       <div className="text-center">
         <Heading subtitle={title} title={title + " menu"} />
         <p className="mt-2 text-secondary text-lg">
@@ -141,7 +186,7 @@ const Lists = ({ title, lists }) => {
         </p>
       </div>
       <div className="overflow-x-hidden">
-        <div className="menu-lists-container">
+        <div ref={ref} className="menu-lists-container">
           <List {...lists[lists.length - 1]} />
           {lists.map(list => (
             <List {...list} />
