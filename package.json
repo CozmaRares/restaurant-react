@@ -1,9 +1,12 @@
 {
+  "homepage": "https://cozmarares.github.io/restaurant-react",
   "name": "restaurant-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
