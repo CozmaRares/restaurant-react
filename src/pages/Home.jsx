@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
-import Spacer from "../components/Spacer";
+import { Spacer } from "../components/Spacer";
 
 import draftBeer from "../assets/draft-beer.mp4";
 

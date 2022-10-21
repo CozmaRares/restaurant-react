@@ -1,6 +1,6 @@
-import PageHeader from "../components/PageHeader";
-import Spacer from "../components/Spacer";
 import Heading from "../components/Heading";
+import PageHeader from "../components/PageHeader";
+import { Spacer } from "../components/Spacer";
 
 import img from "../assets/images/food-and-drink.jpg";
 
