@@ -105,3 +105,19 @@ img {
 .hover-underline:hover::after {
   width: 100%;
 }
+
+.menu-lists-container {
+  --gap: 6rem;
+  --item-width: calc(50% - (var(--gap) / 2));
+  --scroll: -1;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--item-width);
+  gap: var(--gap);
+  transform: translateX(calc(var(--scroll) * (var(--item-width) + var(--gap))));
+}
+
+.menu-lists-container.scroll {
+  transition: transform 300ms ease-in-out;
+}

@@ -189,7 +189,7 @@ const Brands = () => {
       {brands.map(brand => (
         <div
           key={brand}
-          className="w-[250px] h-full bg-neutral-900 relative rounded-md bg-opacity-20"
+          className="w-[250px] h-full bg-neutral-900 relative rounded-md bg-opacity-10"
         >
           <img
             src={brand}
