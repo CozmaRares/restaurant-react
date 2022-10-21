@@ -1,11 +1,10 @@
 {
-  "homepage": "https://cozmarares.github.io/restaurant-react",
   "name": "restaurant-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "pnpm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
@@ -21,6 +20,7 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
     "autoprefixer": "^10.4.12",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.1.8",
     "vite": "^3.1.0"
