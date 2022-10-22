@@ -143,24 +143,20 @@ const Lists = ({ title, lists }) => {
   const handleScroll = direction => {
     const computedStyle = getComputedStyle(ref.current);
 
-    let scroll =
-      parseInt(computedStyle.getPropertyValue("--scroll")) + direction;
+    let scroll = parseInt(computedStyle.getPropertyValue("--scroll"));
 
     const maxScroll = ref.current.children.length - 2;
 
     let reachedEnd = true;
 
-    if (scroll > 0) scroll -= maxScroll;
-    else if (scroll < -maxScroll) scroll += maxScroll;
+    if (scroll >= 0) scroll -= maxScroll;
+    else if (scroll <= -maxScroll) scroll += maxScroll;
     else reachedEnd = false;
 
-    if (reachedEnd) {
-      scroll -= direction;
-      ref.current.style.setProperty("--scroll", `${scroll}}`);
-      scroll += direction;
-    }
+    if (reachedEnd) ref.current.style.setProperty("--scroll", `${scroll}`);
 
     setTimeout(() => {
+      scroll += direction;
       ref.current.style.setProperty("--scroll", `${scroll}`);
 
       ref.current.classList.add("scroll");
