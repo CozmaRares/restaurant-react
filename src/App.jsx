@@ -58,6 +58,7 @@ const Main = () => {
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/booking" element={<Booking />} />
         </Routes>
       </ScrollToTop>
     </main>

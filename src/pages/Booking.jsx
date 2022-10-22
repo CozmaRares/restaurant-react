@@ -64,6 +64,13 @@ const Contacts = () => {
 const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
+
+    const formData = Object.fromEntries(new FormData(event.target));
+    console.log(formData);
+
+    event.target
+      .querySelectorAll(":scope > input")
+      .forEach(inp => (inp.value = ""));
   };
 
   const inputs = [
@@ -76,16 +83,20 @@ const Form = () => {
     },
     {
       type: "text",
-      name: "number",
-      id: "number",
+      name: "phone",
+      id: "phone",
       placeholder: "Phone number",
+      pattern: "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$", //https://ihateregex.io/expr/phone/
+      title: "Must be a valid phone number",
       required: true
     },
     {
       type: "text",
-      id: "num-guests",
-      name: "num-guests",
+      id: "guests",
+      name: "guests",
       placeholder: "Number of Guests",
+      pattern: "^[1234]$",
+      title: "Must be between 1 and 4",
       required: true
     },
     {
