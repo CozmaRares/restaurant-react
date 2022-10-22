@@ -61,7 +61,7 @@ const Hero = () => {
           <br /> with the{" "}
           <span className="text-yellow-custom italic">best foods</span>
         </h5>
-        <p className="font-combo italic font-base">Enjoy your beer!</p>
+        <p className="font-combo italic">Enjoy your beer!</p>
       </div>
     </section>
   );

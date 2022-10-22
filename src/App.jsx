@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import Booking from "./pages/Booking";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 
@@ -27,12 +28,6 @@ const Header = () => {
     { to: "booking", text: "book a table" }
   ];
 
-  const socialLinks = [
-    { href: "#", icon: "github" },
-    { href: "#", icon: "facebook-f" },
-    { href: "#", icon: "instagram" }
-  ];
-
   return (
     <header className="header bg-primary min-h-fit py-6 mb-[5px] font-combo z-[1] sticky top-0">
       <div className="tw--section-center h-full flex items-center justify-between flex-row">
@@ -48,11 +43,7 @@ const Header = () => {
             );
           })}
         </ul>
-        <Socials
-          whereCalled="header"
-          socialLinks={socialLinks}
-          justifyContent="justify-between"
-        />
+        <Socials whereCalled="header" justifyContent="justify-between" />
       </div>
     </header>
   );
@@ -74,12 +65,6 @@ const Main = () => {
 };
 
 const Footer = () => {
-  const socialLinks = [
-    { href: "#", icon: "github" },
-    { href: "#", icon: "facebook-f" },
-    { href: "#", icon: "instagram" }
-  ];
-
   const pageLinks = [
     { to: "", text: "home page" },
     { to: "about", text: "about us" },
@@ -135,11 +120,7 @@ const Footer = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Et animi est
           ab atque omnis exercitationem.
         </p>
-        <Socials
-          whereCalled="footer"
-          socialLinks={socialLinks}
-          justifyContent=""
-        />
+        <Socials whereCalled="footer" justifyContent="" />
       </div>
       <div>
         <h4 className="tw--footer-heading">Navigation</h4>
@@ -173,14 +154,14 @@ const Footer = () => {
       </div>
       <div>
         <h4 className="tw--footer-heading">
-          <label htmlFor="footer-email">Subscribe</label>
+          <label htmlFor="email">Subscribe</label>
         </h4>
         <form className="text-lg">
           <input
-            className="block w-full bg-secondary p-2 pl-4 rounded-md mb-4"
+            className="block w-full bg-secondary p-2 pl-4 rounded-md mb-4 outline-none"
             type="email"
-            name="footer-email"
-            id="footer-email"
+            name="email"
+            id="email"
             placeholder="Email address"
             required
           />
@@ -193,15 +174,26 @@ const Footer = () => {
   );
 };
 
-const Socials = ({ whereCalled, socialLinks, justifyContent }) => {
+const Socials = ({ whereCalled, justifyContent }) => {
+  const socialLinks = [
+    {
+      href: "https://github.com/CozmaRares/restaurant-react",
+      icon: "github"
+    },
+    { href: "#", icon: "facebook-f" },
+    { href: "#", icon: "instagram" }
+  ];
+
   return (
     <ul
       className={`flex items-center ${justifyContent} flex-row text-yellow-custom gap-2`}
     >
-      {socialLinks.map(({ href, icon }) => (
+      {socialLinks.map(({ href, icon }, idx) => (
         <li
           key={whereCalled + icon}
-          className="cursor-pointer w-[1.7em] h-[1.7em] flex items-center justify-center border border-yellow-custom p-1 transition-[color,background-color] rounded-md  hover:text-black hover:bg-yellow-custom"
+          className={`cursor-pointer w-[1.7em] h-[1.7em] flex items-center justify-center border border-yellow-custom p-1 transition-[color,background-color] rounded-md  hover:text-black hover:bg-yellow-custom
+            ${href === "#" && "pointer-events-none opacity-70"}
+            `}
         >
           <a href={href} target="_blank" rel="noopener noreferrer">
             <i className={`fa-brands fa-${icon}`}></i>

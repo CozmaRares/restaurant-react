@@ -188,8 +188,8 @@ const Lists = ({ title, lists }) => {
       <div className="overflow-x-hidden">
         <div ref={ref} className="menu-lists-container">
           <List {...lists[lists.length - 1]} />
-          {lists.map(list => (
-            <List {...list} />
+          {lists.map((list, idx) => (
+            <List key={idx} {...list} />
           ))}
           <List {...lists[0]} />
         </div>
