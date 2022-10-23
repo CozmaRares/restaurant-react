@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import baseURL from "../baseURL";
 import Heading from "./Heading";
 
 const AboutSection = ({ src, alt, direction, hideButton }) => {
@@ -23,10 +22,7 @@ const AboutSection = ({ src, alt, direction, hideButton }) => {
             eius maxime obcaecati excepturi voluptates?
           </p>
           {hideButton === undefined && (
-            <button
-              className="tw--button"
-              onClick={() => navigate(baseURL + "about")}
-            >
+            <button className="tw--button" onClick={() => navigate("/about")}>
               Learn More
             </button>
           )}

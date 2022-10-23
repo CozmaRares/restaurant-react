@@ -1,9 +1,8 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import baseURL from "./src/baseURL";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: baseURL
+  base: "/restaurant-react/"
 });

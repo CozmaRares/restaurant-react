@@ -1,5 +1,4 @@
 import { Link, Route, Routes } from "react-router-dom";
-import baseURL from "./baseURL";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -32,14 +31,14 @@ const Header = () => {
   return (
     <header className="header bg-primary min-h-fit py-6 mb-[5px] font-combo z-[1] sticky top-0">
       <div className="tw--section-center h-full flex items-center justify-between flex-row">
-        <Link to={baseURL} className="h-full">
+        <Link to="/" className="h-full">
           <img src={logo} alt="logo" className="cursor-pointer" />
         </Link>
         <ul className="capitalize flex items-center justify-between flex-row gap-8 text-2xl text-secondary">
           {links.map(({ to, text }) => {
             return (
               <li key={to} className="cursor-pointer hover-underline">
-                <Link to={baseURL + to}>{text}</Link>
+                <Link to={to}>{text}</Link>
               </li>
             );
           })}
@@ -55,11 +54,11 @@ const Main = () => {
     <main>
       <ScrollToTop>
         <Routes>
-          <Route path={baseURL} element={<Home />} />
-          <Route path={baseURL + "about"} element={<About />} />
-          <Route path={baseURL + "menu"} element={<Menu />} />
-          <Route path={baseURL + "blog"} element={<Blog />} />
-          <Route path={baseURL + "booking"} element={<Booking />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/booking" element={<Booking />} />
         </Routes>
       </ScrollToTop>
     </main>
@@ -132,7 +131,7 @@ const Footer = () => {
               key={to}
               className="cursor-pointer w-fit mb-2 border-b-2 border-[#00000000] transition-[border-color,color] tw--yellow-hover-text-border"
             >
-              <Link to={baseURL + to}>{text}</Link>
+              <Link to={to}>{text}</Link>
             </li>
           ))}
         </ul>

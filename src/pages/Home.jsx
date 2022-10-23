@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import baseURL from "../baseURL";
 import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
 import { Spacer } from "../components/Spacer";
@@ -124,7 +123,7 @@ const Menu = () => {
           />
           <button
             className="w-[60%] min-w-fit tw--button mt-3"
-            onClick={() => navigate(baseURL + "menu")}
+            onClick={() => navigate("/menu")}
           >
             Learn More
           </button>

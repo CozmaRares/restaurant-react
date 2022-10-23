@@ -161,7 +161,7 @@ const Lists = ({ title, lists }) => {
 
       ref.current.classList.add("scroll");
       setTimeout(() => ref.current.classList.remove("scroll"), 300);
-    }, 0);
+    }, 1);
   };
 
   return (
