@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import baseURL from "../baseURL";
 import Heading from "./Heading";
-import { Link } from "react-router-dom";
 
 const AboutSection = ({ src, alt, direction, hideButton }) => {
+  const navigate = useNavigate();
+
   return (
     <section className={`flex ${direction} [&>*]:w-1/2`}>
       <div className="p-20 bg-card">
@@ -20,8 +23,11 @@ const AboutSection = ({ src, alt, direction, hideButton }) => {
             eius maxime obcaecati excepturi voluptates?
           </p>
           {hideButton === undefined && (
-            <button className="tw--button">
-              <Link to="/about">Learn More</Link>
+            <button
+              className="tw--button"
+              onClick={() => navigate(baseURL + "about")}
+            >
+              Learn More
             </button>
           )}
         </div>

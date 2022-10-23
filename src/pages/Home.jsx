@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import baseURL from "../baseURL";
 import AboutSection from "../components/AboutSection";
 import Heading from "../components/Heading";
 import { Spacer } from "../components/Spacer";
@@ -68,6 +69,8 @@ const Hero = () => {
 };
 
 const Menu = () => {
+  const navigate = useNavigate();
+
   const menuItems = [
     { img: beerGlass, h3: "BEER MENU" },
     { img: happyHour, h3: "" },
@@ -119,8 +122,11 @@ const Menu = () => {
             subtitle="what we offer"
             title="cold beer and tasty snacks"
           />
-          <button className="w-[60%] min-w-fit tw--button mt-3">
-            <Link to="/menu">Learn More</Link>
+          <button
+            className="w-[60%] min-w-fit tw--button mt-3"
+            onClick={() => navigate(baseURL + "menu")}
+          >
+            Learn More
           </button>
         </div>
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
