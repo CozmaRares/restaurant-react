@@ -2,9 +2,10 @@
 
 ## [Live demo](https://cozmarares.github.io/restaurant-react/)
 
-### Motivation
+### About the project
 
-This project is a remake of the [original project](https://github.com/CozmaRares/odin-project-restaurant), included in [The Odin Project](https://www.theodinproject.com/dashboard) curriculum.
+The title says it all... \
+This is a remake of the [original project](https://github.com/CozmaRares/odin-project-restaurant), included in [The Odin Project](https://www.theodinproject.com/dashboard) curriculum.
 
 [The original template](https://beerpub.weblium.site/)
 
@@ -13,6 +14,10 @@ This project is a remake of the [original project](https://github.com/CozmaRares
 * HTML
 * TailwindCSS, with some CSS workarounds
 * React
+
+### Status
+
+___Work in progress___
 
 ### Improvements to be made
 
@@ -29,4 +34,4 @@ This project is a remake of the [original project](https://github.com/CozmaRares
 
 ### License
 
- whatever
+Do whatever you want with the code.
